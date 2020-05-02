@@ -1,0 +1,57 @@
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+
+name: Attach artifacts
+
+on:
+  release:
+    types:
+    - published
+
+jobs:
+  artifacts:
+    name: create and attach artifacts
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source codes
+      uses: actions/checkout@v2
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - name: Output versions
+      run: |
+        node -v
+        npm -v
+    - name: Install dependencies
+      run: npm ci
+    - name: Build
+      run: npm run build
+    - name: Build package
+      run: npm run package-build
+    - name: Sign to package
+      run: npm run package-sign
+      env:
+        WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
+        WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
+    - name: get release info
+      id: release
+      uses: bruceadams/get-release@v1.2.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: create version info
+      id: version
+      run: |
+        VERSION=${GITHUB_REF}
+        VERSION=${VERSION#refs/tags/}
+        VERSION=${VERSION#v}
+        echo "::set-output name=version::${VERSION}"
+    - name: Attach artifacts
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        asset_path: ./dist/web-ext-artifacts/webextensions_template-${{ steps.version.outputs.version }}-an+fx.xpi
+        asset_name: webextensions_template-${{ steps.version.outputs.version }}-firefox.xpi
+        asset_content_type: application/x-xpinstall

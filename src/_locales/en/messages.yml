@@ -1,0 +1,28 @@
+manifest_name:
+  message: WebExtensions template
+  description: name of extension
+manifest_description:
+  message: WebExtensions template using TypeScript and YAML
+  description: description of extension
+manifest_author:
+  message: shimataro
+  description: author of extension
+manifest_page_action_default_title:
+  message: page action icon
+  description: tooltip for the icon
+
+clicked_page_action:
+  message: You have clicked page action button $COUNT$ times.
+  description: message for clicking page action button
+  placeholders:
+    count:
+      content: $1
+      example: "1"
+
+error:
+  message: "Error: $MESSAGE$"
+  description: error message
+  placeholders:
+    message:
+      content: $1
+      example: unknown error
