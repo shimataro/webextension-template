@@ -1,0 +1,28 @@
+manifest_name:
+  message: WebExtensionsテンプレート
+  description: 拡張機能の名前
+manifest_description:
+  message: TypeScriptとYAMLで書くWebExtensions
+  description: 拡張機能の説明
+manifest_author:
+  message: shimataro
+  description: 拡張機能の著者
+manifest_page_action_default_title:
+  message: ページアクション
+  description: ページアクションのアイコンのツールチップ
+
+clicked_page_action:
+  message: ページアクションボタンを$COUNT$回クリックしました
+  description: ページアクションボタンがクリックされたときのメッセージ
+  placeholders:
+    count:
+      content: $1
+      example: "1"
+
+error:
+  message: "エラーが発生しました: $MESSAGE$"
+  description: エラーメッセージ
+  placeholders:
+    message:
+      content: $1
+      example: 不明なエラーです

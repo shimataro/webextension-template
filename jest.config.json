@@ -1,0 +1,23 @@
+{
+  "verbose": true,
+  "preset": "ts-jest",
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig.test.json"
+    }
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "moduleNameMapper": {
+    "^background$": "<rootDir>/src/baackground",
+    "^content_scripts$": "<rootDir>/src/content_scripts"
+  },
+  "testEnvironment": "node",
+  "testMatch": [
+    "<rootDir>/test/**/*.test.ts"
+  ],
+  "collectCoverage": true,
+  "coverageDirectory": "./coverage/"
+}
