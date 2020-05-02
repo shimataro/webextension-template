@@ -1,0 +1,10 @@
+/dist/
+/node_modules/
+/coverage/
+
+*.bak
+*.tmp
+*.orig
+*.rej
+
+*.xpi
