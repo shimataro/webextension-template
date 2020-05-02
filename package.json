@@ -1,7 +1,7 @@
 {
   "name": "webextensions-template",
   "description": "WebExtensions using TypeScript and YAML",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "shimataro",
   "license": "MIT",
   "repository": {
@@ -45,7 +45,7 @@
     "@typescript-eslint/eslint-plugin": "2.30.0",
     "@typescript-eslint/parser": "2.30.0",
     "eslint": "6.8.0",
-    "jest": "25.5.3",
+    "jest": "25.5.4",
     "js-yaml": "3.13.1",
     "markdownlint-cli": "0.22.0",
     "npm-check-updates": "4.1.2",
