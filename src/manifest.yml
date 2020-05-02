@@ -14,11 +14,10 @@ commands:
 page_action:
   default_icon: icons/icon.svg
   default_title: __MSG_manifest_page_action_default_title__
-  show_matches:
+  show_matches: &target_urls
   - "*://example.com/*"
 content_scripts:
-- matches:
-  - "<all_urls>"
+- matches: *target_urls
   js:
   - "content_scripts/output_title.js"
 background:
