@@ -72,6 +72,11 @@ npm run package-sign
 
 開発中…
 
+## ドキュメント
+
+* [WebExtensions](https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions)
+* [extensions API](https://developer.chrome.com/extensions)
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md).
