@@ -32,9 +32,11 @@ npm run package-build
 
 ### パッケージに署名
 
-パッケージを作成後に以下を実行
+あらかじめパッケージを作成し、以下の環境変数を設定しておく
 
-あらかじめ、環境変数`WEB_EXT_API_KEY`にAPIキーを、`WEB_EXT_API_SECRET`にAPIシークレットを保存しておく: <https://addons.mozilla.org/en-US/developers/addon/api/key/>
+* `WEB_EXT_API_KEY`: APIキー（<https://addons.mozilla.org/en-US/developers/addon/api/key/>）
+* `WEB_EXT_API_SECRET`: APIシークレット
+* `WEB_EXT_ID`: 拡張機能ID（`{UUID}` / `ID`）
 
 ```bash
 npm run package-sign
