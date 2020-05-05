@@ -44,8 +44,6 @@ npm run package-sign
 
 `dist/web-ext-artifacts`以下に署名されたパッケージが作成される
 
-※ソフトウェアを[リリース](https://github.com/shimataro/webextensions-template/releases)すると自動的に署名付きパッケージが添付される
-
 ### 依存npmパッケージの更新
 
 以下のコマンドを実行すると、依存パッケージが更新されたブランチが作成される。
@@ -66,7 +64,7 @@ npm run package-sign
 
 `NEW_VERSION`には新しいバージョン（セマンティックバージョニング）を指定。
 
-リリースが完了すると、自動的に署名付きパッケージが添付される。
+[リリース](https://github.com/shimataro/webextensions-template/releases)が完了すると、自動的に署名付きパッケージが添付される。
 
 ## 使用方法
 
